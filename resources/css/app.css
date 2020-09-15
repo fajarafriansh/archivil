@@ -1,0 +1,33 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  @font-face {
+    font-family: 'Inter';
+    src: url("../fonts/Inter-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal; }
+  @font-face {
+    font-family: 'Inter';
+    src: url("../fonts/Inter-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal; }
+  @font-face {
+    font-family: 'Inter';
+    src: url("../fonts/Inter-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal; }
+}
+
+/*Form with floating label*/
+.label-floating label {
+  @apply absolute left-4 top-4 text-base leading-5 transition duration-150 ease-in-out
+}
+.label-floating input {
+  @apply h-12 pt-6
+}
+.label-floating input:focus-within ~ label,
+.label-floating input:not(:placeholder-shown) ~ label {
+  @apply transition ease-in-out duration-300 text-xs text-base-color3 transform -translate-y-3
+}
